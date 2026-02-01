@@ -114,14 +114,17 @@
   }
 
   noBtn.addEventListener("mouseover", moveNoButton);
+noBtn.addEventListener("touchstart", moveNoButton);
 
-  noBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    if (navigator.vibrate) {
-      navigator.vibrate([120, 60, 120]);
-    }
-    moveNoButton();
-  });
+noBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  if (navigator.vibrate) {
+    navigator.vibrate([120, 60, 120]);
+  }
+
+  moveNoButton();
+});
 
   yesBtn.addEventListener("click", () => {
     yesBtn.style.display = "none";
